@@ -1,7 +1,7 @@
 package solid.humank.dddch01;
 
 public class CustomerDao {
-    public Customer readCustomer(String customerId) {
+    public solid.humank.dddch01.Customer readCustomer(String customerId) {
 
         //sudo code, imagine this method call is going to fetch data from database
         return new Customer("DEFAULT");
