@@ -1,14 +1,23 @@
 package iddd.ch01.domain.model;
 
-import iddd.ch01.domain.model.customer.Customer;
-import iddd.ch01.domain.model.customer.EmailAddress;
-import iddd.ch01.domain.model.customer.PostalAddress;
-import iddd.ch01.domain.model.customer.Telephone;
+import iddd.ch01.domain.model.customer.*;
 
 public class FieldCustomer implements Customer {
 
     private String firstName;
     private String lastName;
+    private CustomerId customerId;
+
+    public FieldCustomer(String firstName, String lastName) {
+        this.firstName =firstName;
+        this.lastName = lastName;
+        customerId = CustomerIdGenerator.generate();
+    }
+
+    @Override
+    public Customer registerCustomer(String firstName, String lastName) {
+        return new FieldCustomer(firstName,lastName);
+    }
 
     @Override
     public void changePersonalName(String firstName, String lastName) {
@@ -59,5 +68,10 @@ public class FieldCustomer implements Customer {
     @Override
     public String personalName() {
         return firstName.concat(" ").concat(lastName);
+    }
+
+    @Override
+    public CustomerId displayCustomerId() {
+        return customerId;
     }
 }
