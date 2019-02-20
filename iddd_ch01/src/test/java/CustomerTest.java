@@ -1,6 +1,5 @@
 import iddd.ch01.domain.model.FieldCustomer;
 import iddd.ch01.domain.model.customer.Customer;
-import iddd.ch01.domain.model.customer.CustomerId;
 import iddd.ch01.port.adapter.persistence.CustomerRepository;
 import org.junit.Test;
 
