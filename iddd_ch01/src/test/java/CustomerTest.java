@@ -13,20 +13,21 @@ public class CustomerTest {
     public void changePersonalName(){
 
         //Arrange
+
         String lastName = "World";
         String firstName ="hello";
         Customer customer = new FieldCustomer(firstName,lastName);
-        CustomerId customerId = customer.displayCustomerId();
 
         CustomerRepository customerRepository = new CustomerRepository();
-        customerRepository.register(customer);
+        Customer registered = customerRepository.register(customer);
 
         //Act
 
-        Customer fetchedCustomer = customerRepository.customerOfId(customerId);
+        Customer fetchedCustomer = customerRepository.customerOfId(registered.displayCustomerId());
         customer.changePersonalName("Kim", "Kao");
 
         //Assert
+
         assertEquals(fetchedCustomer.personalName(),"Kim Kao");
     }
 }
