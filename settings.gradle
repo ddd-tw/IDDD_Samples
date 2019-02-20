@@ -1,1 +1,1 @@
-include 'iddd_common', 'iddd_identityaccess', 'iddd_collaboration', 'iddd_agilepm'
+include 'iddd_common', 'iddd_identityaccess', 'iddd_collaboration', 'iddd_agilepm', 'iddd_ch01'
